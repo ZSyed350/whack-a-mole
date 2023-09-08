@@ -1,17 +1,20 @@
 .grid-container {
     display: flex;
     flex-wrap: wrap; /* squares can wrap to the next row when they reach the max width */
-    width: 70vw;
+    width: 80vh;
+    position: fixed;
+    bottom: 0;
+    left: calc(50vw - 40vh);
 }
 
 .square {
-    width: 33.33%;
-    height:
-    padding: 10px; /* padding btwn squares */
+    width: 30%;
     background-image: url('../static/duck.jpg');
+    filter: grayscale(100%);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center
+    background-position: center;
+    border: 2px solid #000;
 }
 
 .square::before {

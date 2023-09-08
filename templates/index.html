@@ -10,26 +10,39 @@
 <body>
     <h1>Whack-a-mole</h1>
     <div class="grid-container">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <div class="square" onclick="goColor(this)"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
 
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
 
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
+        <div class="square" onclick="whenClicked(this)"></div>
     </div>
-<!--<script>-->
-<!--    const gridContainer = document.querySelector('.grid-container')-->
+    <script>
+        // TODO: dynamically create ducks after page load
 
-<!--    for (let i=0, i<3*3; i++) {-->
-<!--        const square = document.createElement('div');-->
-<!--        square.classList.add('square');-->
-<!--        gridContainer.appendChild(square);-->
-<!--    }-->
-<!--</script>-->
+        function whenClicked(div) {
+            if (div.style.filter == 'none') {
+                goColor(div);
+            }
+            else {
+                goGrey(div);
+            }
+        }
+
+        function goColor(duck) {
+            duck.style.filter = 'none';
+        }
+
+        function goGrey(duck) {
+            duck.style.filter = 'grayscale(100%)';
+        }
+        // every 3 seconds, if all are grey, randomly select one and remove it from grey scale
+        // if the colored image is clicked, remove it from grey scale
+    </script>
 </body>
 </html>
